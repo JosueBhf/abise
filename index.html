@@ -5,125 +5,189 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ABISE | Apoyo Biomédico en Servicios</title>
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
-      color: #333;
+    :root{
+      --azul:#0b5ed7;
+      --gris:#f4f6f8;
+      --oscuro:#222;
     }
-    header {
-      background: #0b5ed7;
-      color: #fff;
-      padding: 40px 20px;
-      text-align: center;
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+      color:#333;
+      line-height:1.6;
     }
-    header h1 {
-      margin: 0;
-      font-size: 2.2rem;
+    /* NAV */
+    nav{
+      position:sticky;
+      top:0;
+      z-index:10;
+      background:#fff;
+      border-bottom:1px solid #e5e5e5;
     }
-    header p {
-      margin-top: 10px;
-      font-size: 1.1rem;
+    nav .container{
+      max-width:1100px;
+      margin:auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:12px 20px;
     }
-    section {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
+    nav a{
+      margin-left:20px;
+      text-decoration:none;
+      color:#333;
+      font-weight:500;
     }
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+    nav a:hover{color:var(--azul)}
+
+    /* HERO */
+    header{
+      background:linear-gradient(rgba(11,94,215,.85),rgba(11,94,215,.85)), url('img/ABISE1IM.jpg') center/cover no-repeat;
+      color:#fff;
+      padding:90px 20px;
+      text-align:center;
     }
-    .card {
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 20px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    header h1{margin:0;font-size:2.6rem}
+    header p{margin-top:15px;font-size:1.15rem}
+
+    section{
+      padding:60px 20px;
+      max-width:1100px;
+      margin:auto;
     }
-    .card h3 {
-      margin-top: 0;
-      color: #0b5ed7;
+
+    .services{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:25px;
     }
-    .contact {
-      background: #f4f6f8;
-      border-radius: 8px;
-      padding: 30px;
+    .card{
+      background:#fff;
+      border-radius:14px;
+      padding:25px;
+      box-shadow:0 10px 30px rgba(0,0,0,.08);
     }
-    footer {
-      background: #222;
-      color: #fff;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
+    .card img{
+      width:100%;
+      border-radius:10px;
+      margin-bottom:15px;
     }
-    a {
-      color: #0b5ed7;
-      text-decoration: none;
+    .card h3{margin-top:0;color:var(--azul)}
+
+    .contact{
+      background:var(--gris);
+      border-radius:16px;
+      padding:40px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:30px;
+    }
+    .contact div{font-size:1.05rem}
+
+    footer{
+      background:var(--oscuro);
+      color:#fff;
+      padding:30px 20px;
+    }
+    footer .container{
+      max-width:1100px;
+      margin:auto;
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:space-between;
+      gap:20px;
+    }
+    footer a{color:#fff;text-decoration:none}
+
+    @media(max-width:768px){
+      .contact{grid-template-columns:1fr}
+      nav .container{flex-direction:column;align-items:flex-start}
+      nav a{margin:10px 0 0}
     }
   </style>
 </head>
 <body>
 
+  <!-- NAV -->
+  <nav>
+    <div class="container">
+      <strong>ABISE</strong>
+      <div>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
   <header>
-    <h1>ABISE</h1>
-    <p>Apoyo Biomédico en Servicios</p>
-    <p>Soluciones especializadas en hemodiálisis y ósmosis inversa</p>
+    <h1>Apoyo Biomédico en Servicios</h1>
+    <p>Especialistas en hemodiálisis y sistemas de ósmosis inversa</p>
   </header>
 
-  <section>
+  <section id="nosotros">
     <h2>¿Quiénes somos?</h2>
     <p>
-      ABISE (Apoyo Biomédico en Servicios) es una empresa enfocada en brindar apoyo técnico y soluciones confiables
-      para instituciones de salud y empresas del sector médico. Nos especializamos en sistemas de hemodiálisis
-      y plantas de tratamiento de agua por ósmosis inversa.
+      ABISE es una empresa dedicada a brindar apoyo técnico y soluciones confiables
+      a instituciones de salud y empresas del sector biomédico, con especial énfasis
+      en hemodiálisis y tratamiento de agua grado médico.
     </p>
   </section>
 
-  <section>
+  <section id="servicios">
     <h2>Servicios</h2>
     <div class="services">
       <div class="card">
+        <img src="img/hemodialisis.jpg" alt="Hemodiálisis">
         <h3>Hemodiálisis</h3>
-        <p>
-          Soporte técnico, mantenimiento y asesoría en equipos y sistemas de hemodiálisis,
-          priorizando la seguridad y el correcto funcionamiento.
-        </p>
+        <p>Soporte técnico, mantenimiento y asesoría especializada en sistemas y equipos de hemodiálisis.</p>
       </div>
       <div class="card">
+        <img src="img/osmosis.jpg" alt="Ósmosis inversa">
         <h3>Ósmosis inversa</h3>
-        <p>
-          Instalación, mantenimiento y diagnóstico de sistemas de ósmosis inversa
-          para garantizar agua de calidad médica.
-        </p>
+        <p>Instalación, mantenimiento y diagnóstico de plantas de ósmosis inversa para uso clínico.</p>
       </div>
       <div class="card">
+        <img src="img/asesoria.jpg" alt="Asesoría biomédica">
         <h3>Asesoría biomédica</h3>
-        <p>
-          Apoyo técnico especializado para empresas e instituciones que requieren
-          optimizar sus procesos y equipos biomédicos.
-        </p>
+        <p>Acompañamiento técnico para optimizar procesos, cumplimiento normativo y operación segura.</p>
       </div>
     </div>
   </section>
 
-  <section>
+  <section id="contacto">
     <h2>Contacto</h2>
     <div class="contact">
-      <p>
-        Si deseas ponerte en contacto con nosotros o solicitar información,
-        puedes escribirnos a:
-      </p>
-      <p><strong>Email:</strong> contacto@abise.com</p>
-      <p><strong>Teléfono:</strong> +52 55 0000 0000</p>
-      <p>
-        También podemos atenderte mediante acuerdos con empresas y hospitales.
-      </p>
+      <div>
+        <p><strong>Correo:</strong><br>abisesacv@gmail.com</p>
+        <p><strong>Teléfono:</strong><br>5520903029</p>
+      </div>
+      <div>
+        <p>
+          Contáctanos para establecer acuerdos de servicio con hospitales,
+          clínicas y empresas del sector salud.
+        </p>
+      </div>
     </div>
   </section>
 
   <footer>
-    <p>© 2026 ABISE – Apoyo Biomédico en Servicios</p>
+    <div class="container">
+      <div>
+        <strong>ABISE</strong><br>
+        Apoyo Biomédico en Servicios
+      </div>
+      <div>
+        <a href="#nosotros">Nosotros</a><br>
+        <a href="#servicios">Servicios</a><br>
+        <a href="#contacto">Contacto</a>
+      </div>
+      <div>
+        © 2026 ABISE
+      </div>
+    </div>
   </footer>
 
 </body>
